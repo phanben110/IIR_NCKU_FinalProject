@@ -38,7 +38,7 @@ with open('ouput_drug.txt', 'r') as file:
 def extract_relation(): 
     st.image("image/Extract Relation.png") 
     st.subheader("1. Extract Relation with CLIP Architecture", divider='rainbow')
-    st.image("image/CLIP_Architecture.png")    
+    st.image("image/RE_Clip.png")    
 
     uploaded_file_1 = st.sidebar.file_uploader("Load Image Left", type=["png","jpg"], accept_multiple_files=False)
     uploaded_file_2 = st.sidebar.file_uploader("Load Image Right", type=["png","jpg"], accept_multiple_files=False)
