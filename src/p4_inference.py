@@ -101,7 +101,7 @@ def inference():
         if choice_pretraining_model == "bert-base-uncased":
             weight_path = "Model_BERT_2_Nomal/best_model_BERT2_bert-base-uncased.pt"
         elif choice_pretraining_model == "alvaroalon2/biobert_diseases_ner":
-            weight_path = "Model_BERT_2/final_model_BERT2.pt"
+            weight_path = "Model_BERT_2/best_model_BERT2.pt"
 
     tokenizer = BertTokenizer.from_pretrained(choice_pretraining_model) 
 

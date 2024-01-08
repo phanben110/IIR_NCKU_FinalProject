@@ -10,7 +10,6 @@ import torch.nn as nn
 import numpy as np 
 import cv2
 
-text_list = []
 import re
 
 def remove_parentheses(file_name):
@@ -72,7 +71,7 @@ class ClipModel(nn.Module):
 
         return text_pooler_output, mapped_outputs
 
-def inference(image, clip_model):
+def inference_clip(image, clip_model):
     # 读取图像
     # image = Image.open(image_path).convert('RGB')
 
@@ -142,7 +141,7 @@ def clip():
                 clip_model = ClipModel()
                 clip_model.load_state_dict(torch.load(trained_model_path, map_location=torch.device('cpu')))
                 clip_model.eval()
-                result_text = inference(im, clip_model)
+                result_text = inference_clip(im, clip_model)
                 st.success(f"The most similar text for the given image is: {result_text}", icon="✅" )
 
             else:

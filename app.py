@@ -21,6 +21,7 @@ from src.p2_training import *
 from src.p3_evaluation import *
 from src.p4_inference import *
 from src.p5_clip import *
+from src.p6_extract_relation import * 
 from src.footer import settingFooter
 
 
@@ -29,23 +30,30 @@ st.set_page_config(page_title="Final Project IR", page_icon="image/logo_csie2.pn
 # st.image("image/title_search.png")
 st.sidebar.image("image/logo_NCKU.jpeg", use_column_width=True)
 with st.sidebar:
-    selected = option_menu("Main Menu", ["1. Data Processing", "2. BERT Training", "3. Evaluation", "4. Inference", "5. CLIP"],
-                           icons=["blockquote-right","cpu-fill", "bar-chart-fill", "body-text" , "clipboard-data-fill"], menu_icon="bars", default_index=0)
+    # selected = option_menu("Main Menu", ["1. Data Processing", "2. BERT Training", "3. Evaluation", "4. Inference", "5. CLIP"],
+    #                        icons=["blockquote-right","cpu-fill", "bar-chart-fill", "body-text" , "clipboard-data-fill"], menu_icon="bars", default_index=0)
+    selected = option_menu("Main Menu", ["1. BERT", "2. CLIP", "3. Extract Relation Two Image"],
+                       icons=["bar-chart-fill","clipboard-data-fill", "body-text"], menu_icon="bars", default_index=0)
 # Based on the selected option, you can display different content in your web application
 # page for select icon https://icons.getbootstrap.com/
 
 # settingFooter()
-if selected == "1. Data Processing":
-    processing()
+# if selected == "1. Data Processing":
+#     processing()
 
-elif selected == "2. BERT Training":
-    training()
+# elif selected == "2. BERT Training":
+#     training()
 
-elif selected == "3. Evaluation":
-    evaluation()
+# elif selected == "3. Evaluation":
+#     evaluation()
 
-elif selected == "4. Inference":
-    inference()
+# elif selected == "4. Inference":
+#     inference()
 
-elif selected == "5. CLIP":
+
+if selected == "1. BERT":
+    inference() 
+elif selected == "2. CLIP":
     clip()
+elif selected == "3. Extract Relation Two Image": 
+    extract_relation()
